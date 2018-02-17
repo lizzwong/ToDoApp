@@ -1,13 +1,12 @@
 body {
     margin: 30px;
-    font-size: 25px;
-    color: #100D6F;
-    background: rgb(237, 231, 228);  
+    background: rgb(242, 234, 231);  
 
 }
 
 h1 {
     padding: 10px;
+     font-size: 25px;
     font-family: 'Times New Roman', Times, serif;
     color:#100D6F;
 }
@@ -17,14 +16,19 @@ h2 {
     font-family: 'Courier New', Courier, monospace;
     color:#100D6F;
     font-size: 18px;
-    text-emphasis: strike;
 }
+
+.taskToDO {
+    height: 50px;
+    width: 100px;
+}
+
 .table {
-  border: solid;
-  border-color: #CBD8E2  ;
-  border-width: 2px;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 15px;
-  color: #100D6F;
-  
+    border: solid;
+    border-color: #CBD8E2  ;
+    border-width: 2px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    color: #100D6F;
+    
 }

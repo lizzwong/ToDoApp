@@ -7,6 +7,11 @@ function onReady() {
         event.preventDefault();
         addTask();
     })
+    $('.table').on('click', '.deleteButton', function () {
+        console.log('Delete task');
+        let taskToDelete = $(this).data('id');
+        deleteTask(taskToDelete);
+    })
 }
 
 function getAllTasks(){
@@ -40,6 +45,20 @@ $.ajax({
           console.log('Could not add tasks');
     })//end Fail
 }//end add new task
+
+function deleteTask(id){
+$.ajax({
+    type: 'DELETE',
+    url: `/tasks/delete/${id}`,
+})
+    .done(function(response){
+        console.log('Task deleted', response);
+        getAllTasks();
+    })//end done
+    .fail(function(){
+        console.log('Task not deleted');
+    })//end fail 
+}//end delete task
 
 function displayTasks(bananas){
     $('#listTasks').empty();
