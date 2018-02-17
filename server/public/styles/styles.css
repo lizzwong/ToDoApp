@@ -1,4 +1,30 @@
+body {
+    margin: 30px;
+    font-size: 25px;
+    color: #100D6F;
+    background: rgb(237, 231, 228);  
+
+}
+
 h1 {
-    margin: 20px,
-    font teal,
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    color:#100D6F;
+}
+
+h2 {
+    padding: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    color:#100D6F;
+    font-size: 18px;
+    text-emphasis: strike;
+}
+.table {
+  border: solid;
+  border-color: #CBD8E2  ;
+  border-width: 2px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 15px;
+  color: #100D6F;
+  
 }
