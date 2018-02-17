@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="vendors/jquery.min.js" charset="utf-8"></script>
+    <script src="scripts/client.js" charset="utf-8"></script>
+    <link rel="stylesheet"  href="style.css" />
+</head>
+<body>
+    <h1>To Do List</h1>
+        <h2><input type="date" id="date"><input type="text" class="taskToDo"><button id="submitButton">Submit</button> </h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="row">Date</th>
+                <th scope="row">Task</th>
+                <th scope="row">Mark Complete</th>
+                <th scope="row"></th>
+            </tr>
+        </thead>
+        <tbody id="listTasks"></tbody>
+     </table>   
+</body>
+</html>
