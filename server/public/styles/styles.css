@@ -5,8 +5,8 @@ body {
 }
 
 h1 {
-    padding: 10px;
-     font-size: 25px;
+    padding: 8px;
+     font-size: 38px;
     font-family: 'Times New Roman', Times, serif;
     color:#100D6F;
 }
@@ -24,6 +24,7 @@ h2 {
 }
 
 .table {
+    padding: 15px;
     border: solid;
     border-color: #CBD8E2  ;
     border-width: 2px;

@@ -5,13 +5,21 @@ function onReady() {
     getAllTasks();
     $('#submitButton').on('click',function(event){
         event.preventDefault();
+        emptyInputs();
         addTask();
-    })
+    })//submit button
+
     $('.table').on('click', '.deleteButton', function () {
         console.log('Delete task');
         let taskToDelete = $(this).data('id');
         deleteTask(taskToDelete);
-    })
+    })//delete button
+
+    $('.table').on('click', '.completeButton', function () {
+        console.log('In Complete task');
+        let taskComplete = $(this).data('id');
+        completeTask(taskComplete);
+    })//complete
 }
 
 function getAllTasks(){
@@ -60,11 +68,25 @@ $.ajax({
     })//end fail 
 }//end delete task
 
+function completeTask(id){
+$.ajax({
+    type: 'PUT',
+    url: `/tasks/complete/${id}`,
+})
+    .done(function (response) {
+        console.log('Task complete', response);
+        getAllTasks();
+    })//end done
+    .fail(function () {
+        console.log('Task not complete');
+    })//end fail 
+}
+
 function displayTasks(bananas){
     $('#listTasks').empty();
     for( let banana of bananas ){
         $('#listTasks').append(`<tr><td>${banana.dateadded.substring(0, 10)}</td><td>${banana.task}</td>
-        <td>${banana.status}</td><td><button class="markCompleteButton" data-id=${banana.id}>Complete</button></td>
+        <td>${banana.status}</td><td><button class="completeButton" data-id=${banana.id}>Complete</button></td>
         <td><button class="deleteButton" data-id=${banana.id}>Delete</button></td></tr>`)
     }
 }//end display tasks function
@@ -77,3 +99,8 @@ function getNewTask(){
     }
     return taskToAdd
 }//end getting inputs from DOM
+
+function emptyInputs(){
+    $('.date').val(),
+    $('taskToDo').val()
+}
