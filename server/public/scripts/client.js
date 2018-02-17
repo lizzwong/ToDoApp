@@ -20,15 +20,20 @@ $.ajax({
     })//end Fail
 }//end get tasks
 
-function displayTasks(){
-    
-}
+function displayTasks(bananas){
+    $('#listTasks').empty();
+    for( let banana of bananas){
+        $('#listTasks').append(`<tr><td>${banana.dateadded.substring(0, 10)}</td><td>${banana.task}</td>
+        <td>${banana.status}</td><td><button class="markCompleteButton" data-id=${banana.id}>Complete</button></td>
+        <td><button class="deleteButton" data-id=${banana.id}>Delete</button></td></tr>`)
+    }
+}//end display tasks function
 
 function getNewTask(){
     let taskToAdd = {
         date : $('#date').val(),
         task : $('.taskToDo').val(),
-        completed : 'No'
+        status : 'Incomplete'
     }
     let newTask = taskToAdd
-}//getting inputs from DOM
+}//end getting inputs from DOM
