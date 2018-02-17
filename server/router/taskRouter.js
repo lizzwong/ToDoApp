@@ -17,6 +17,19 @@ pool.query(sqlText)
     })
 })//end router get tasks
 
-
+router.post('/add', function (request,response){
+const newTask = request.body;
+const sqlText = `INSERT INTO tasks(dateadded, task, status)
+    VALUES($1, $2, $3)`;
+pool.query(sqlText, [newTask.dateadded, newTask.task, newTask.status])
+    .then(function (result) {
+        console.log('Tasks added', result);
+        response.send(200);
+    })//end then 
+    .catch(function (error) {
+        console.log('Could not add tasks');
+        response.sendStatus(500);
+    })
+})
 
 module.exports = router;
