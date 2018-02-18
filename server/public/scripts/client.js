@@ -6,6 +6,7 @@ function onReady() {
     $('#submitButton').on('click',function(event){
         event.preventDefault();
         addTask();
+        emptyInputs();
     })//submit button
 
     $('.table').on('click', '.deleteButton', function () {
@@ -108,5 +109,5 @@ function getNewTask(){
 
 function emptyInputs(){
     $('.date').val(''),
-    $('taskToDo').val('')
+    $('.taskToDo').val('')
 }
