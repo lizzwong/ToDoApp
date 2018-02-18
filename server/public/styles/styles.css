@@ -33,3 +33,7 @@ h2 {
     color: #100D6F;
     
 }
+
+.completeTask{
+    text-decoration: line-through;
+}
