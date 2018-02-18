@@ -6,4 +6,4 @@ status varchar(15)
 );
 
 INSERT INTO tasks (dateadded, task, status)
-VALUES ('2/16/2018','Finish weekend 3 homework', 'Complete' );
+VALUES ('2/16/2018','Finish weekend 3 homework', 'Complete' ), ('5/4/2018', 'Get a job', 'Incomplete');
