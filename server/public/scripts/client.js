@@ -6,7 +6,6 @@ function onReady() {
     $('#submitButton').on('click',function(event){
         event.preventDefault();
         addTask();
-        emptyInputs();
     })//submit button
 
     $('.table').on('click', '.deleteButton', function () {
@@ -48,6 +47,7 @@ $.ajax({
     .done(function (response) {
          console.log('Tasks added', response);
          getAllTasks();
+         emptyInputs();
     })//end Done
     .fail(function (response) {
           console.log('Could not add tasks');
@@ -86,11 +86,11 @@ function displayTasks(bananas){
     $('#listTasks').empty();
     for( let banana of bananas ){
         if (banana.status == 'Incomplete'){
-        $('#listTasks').append(`<tr><td>${banana.dateadded.substring(0, 10)}</td><td>${banana.task}</td>
+            $('#listTasks').append(`<tr><td>${banana.dateadded.substring(0, 10)}</td><td>${banana.task}</td>
         <td>${banana.status}</td><td><button class="completeButton" data-id=${banana.id}>Complete</button></td>
         <td><button class="deleteButton" data-id=${banana.id}>Delete</button></td></tr>`)}
         else {
-            $('#listTasks').append(`<tr><td class="completeTask">${banana.dateadded.substring(0, 10)}</td>
+            $('#listTasks').append(`<tr><td>${banana.dateadded.substring(0, 10)}</td>
         <td class="completeTask">${banana.task}</td><td>${banana.status}</td><td></td>
         <td><button class="deleteButton" data-id=${banana.id}>Delete</button></td></tr>`)
         }

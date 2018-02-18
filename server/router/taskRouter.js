@@ -5,7 +5,7 @@ const pool = require('../modules/pool');
 const bodyParser = require('body-parser');
 
 router.get('/',function(request,response){
-const sqlText = `SELECT * FROM tasks`;
+const sqlText = `SELECT * FROM tasks ORDER BY status DESC`;
 pool.query(sqlText)
     .then(function(result){
         console.log('Tasks acquired', result);

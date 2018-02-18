@@ -1,7 +1,7 @@
 body {
     margin: 30px;
-    background: rgb(242, 234, 231);  
-
+    background: rgb(242, 234, 231); 
+    
 }
 
 h1 {
@@ -24,10 +24,10 @@ h2 {
 }
 
 .table {
-    padding: 15px;
+    padding: 13px;
     border: solid;
     border-color: #CBD8E2  ;
-    border-width: 2px;
+    border-width: 3px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
     color: #100D6F;
@@ -36,4 +36,12 @@ h2 {
 
 .completeTask{
     text-decoration: line-through;
+    color: rgb(174, 53, 53);
+}
+
+
+.dateBoarder {
+    border-width: 1px;
+    border-right: solid;
+    border-color:rgb(240, 167, 167);
 }
