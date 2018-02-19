@@ -8,7 +8,7 @@ app.use('/tasks', taskRouter);
 
 app.use(express.static('server/public'));
 
-const port = 8888
+const port = process.env.PORT || 8888
 app.listen(port, function(){
     console.log(`listening on port ${port}. Gong Xi Fa Cai`);
 })
